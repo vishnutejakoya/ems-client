@@ -1,0 +1,52 @@
+<div>
+    <h2 *ngIf="!employee || employee.id === undefined">Add Employee</h2>
+    <h2 *ngIf="employee && employee.id !== undefined">Update Employee</h2>
+    <form>
+        <div class="form-group">
+            <label for="firstName-input">First Name:</label>
+            <input name="firstName" type="text" id="firstName" [(ngModel)]="employee.firstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="middleName-input">Middle Name:</label>
+            <input name="middleName" type="text" id="middleName" [(ngModel)]="employee.middleName"
+                class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="lastName-input">Last Name:</label>
+            <input name="lastName" type="text" id="lastName" [(ngModel)]="employee.lastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="userName-input">User Name:</label>
+            <input name="userName" type="text" id="userName" [(ngModel)]="employee.userName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password-input">Password:</label>
+            <input name="password" type="password" id="password" [(ngModel)]="employee.password" class="form-control" />
+        </div>
+        <!-- <div class="form-group">
+            <label for="dateOfBirth-input">Date Of Birth:</label>
+            <input name="dateOfBirth" type="date" id="dateOfBirth" [(ngModel)]="employee.dateOfBirth"
+                class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="dateOfJoining-input">Date Of Joining:</label>
+            <input name="dateOfJoining" type="date" id="dateOfJoining" [(ngModel)]="employee.dateOfJoining"
+                class="form-control" />
+        </div> -->
+        <div class="form-group">
+            <label for="mobileNumber-input">Mobile:</label>
+            <input name="mobileNumber" type="text" id="mobileNumber" [(ngModel)]="employee.mobileNumber"
+                class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="email-input">Email:</label>
+            <input name="email" type="text" id="email" [(ngModel)]="employee.email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="address-input">Address:</label>
+            <textarea name="address" type="text" id="address-input" [(ngModel)]="employee.address"
+                class="form-control"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="addUpdateEmployee($event);">Save</button>
+    </form>
+</div>

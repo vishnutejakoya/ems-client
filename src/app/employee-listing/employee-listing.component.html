@@ -1,0 +1,35 @@
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Middle Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">User Name</th>
+            <!-- <th scope="col">Date Of Birth</th>
+            <th scope="col">Date Of Joining</th> -->
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngIf="employees?.length == 0">
+            <td>No data</td>
+        </tr>
+        <tr *ngFor="let employee of employees">
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.middleName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.userName }}</td>
+            <!-- <td>{{ employee.dateOfBirth }}</td>
+            <td>{{ employee.dateOfJoining }}</td> -->
+            <td>{{ employee.mobileNumber }}</td>
+            <td>{{ employee.email }}</td>
+            <td>
+                <a href="#" class="m-1" (click)="edit(employee)">Edit</a>
+                <a href="#" class="m-2" (click)="delete(employee)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary mb-2" (click)="new()">New</button>
